@@ -111,10 +111,6 @@ contract ReInvestPool is Third {
         emit SetRITPerBlock(_RITPerBlock);
     }
 
-    function setFeebase(uint256 _feeBase) public onlyOwner {
-        feeBase = _feeBase;
-    }
-
     function setFee(uint256 _fee) public onlyOwner {
         require(_fee <=30,"fee can not more than 30%");
         fee = _fee;
