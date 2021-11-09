@@ -116,6 +116,7 @@ contract ReInvestPool is Third {
     }
 
     function setFee(uint256 _fee) public onlyOwner {
+        require(_fee <=30,"fee can not more than 30%");
         fee = _fee;
     }
 
