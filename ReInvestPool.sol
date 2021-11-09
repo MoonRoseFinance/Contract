@@ -130,6 +130,8 @@ contract ReInvestPool is Third {
         if (_withUpdate) {
             massUpdatePools();
         }
+        require(_deposit_fee <=30,"fee can not more than 3%");
+        require(_withdraw_fee <=30,"fee can not more than 3%");
         uint256 lastRewardBlock = block.number;
         totalAllocPoint = totalAllocPoint.add(_allocPoint);
         poolInfo.push(PoolInfo({
@@ -155,6 +157,8 @@ contract ReInvestPool is Third {
         if (_withUpdate) {
             massUpdatePools();
         }
+        require(_deposit_fee <=30,"fee can not more than 3%");
+        require(_withdraw_fee <=30,"fee can not more than 3%");
         totalAllocPoint = totalAllocPoint.sub(poolInfo[_pid].allocPoint).add(_allocPoint);
         poolInfo[_pid].allocPoint = _allocPoint;
         poolInfo[_pid].minAMount = _min;
